@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Web Components</title>
+  <script src="modal.js"></script>
+</head>
+<body>
+  <uc-modal opened>
+    <h1 slot="title">Title...</h1>
+    <p>Sample text here</p>
+  </uc-modal>
+  <script>
+    const modal = document.querySelector('uc-modal');
+    modal.open();   
+
+    const myFunc1 = () => {
+      console.log("Testing arrow function without argument...");  
+    };
+    myFunc1();
+
+    const myFunc2 = arg => {
+      console.log("Testing arrow function with single argument...");  
+      console.log(arg);
+    };
+    myFunc2("Hi");
+    
+    const myFunc3 = (arg1, arg2) => {
+      console.log("Testing arrow function with more than 1 arguments...");  
+      console.log(arg1);  
+      console.log(arg1);  
+    };
+    myFunc3("first argument","second argument");
+
+    const myFunc4 = number => number + 5;
+    console.log("Testing arrow function with shortcut...");  
+    console.log(myFunc4(1));
+  </script>
+</body>
+</html>

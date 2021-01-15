@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Example</title>
+    <script src="slotexample.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            --primary-color: green;
+            font-family: sans-serif;
+        }
+        span {
+            background-color: rgb(204, 19, 133);
+            color: white;   
+            border: solid 2px black; /* light dom overrides shadow dom styles */       
+        }
+        my-slotexample {
+            border: solid 1px blue;
+            padding: 10px;
+        }
+        .bgcolor1 {
+            background-color: rgb(190, 30, 30);     
+        }
+    </style>
+</head>
+<body>
+    Hi <my-slotexample class="bgcolor1"><span>From HTML file</span></my-slotexample> one...
+    <br/>
+    <br/>
+    Hi <my-slotexample class="bgcolor2"></my-slotexample> two...
+    <br/>
+    <br/>
+    Hi <my-slotexample class="bgcolor3"></my-slotexample> three...
+    <br/>
+    <br/>
+    <p>Hi <my-slotexample></my-slotexample> four...</p>
+</body>
+</html>

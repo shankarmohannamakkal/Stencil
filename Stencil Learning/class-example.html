@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Web Components</title>  
+</head>
+<body>
+  <script>
+    class baseClass {
+      constructor() {
+        this.xyz = 'xyz';
+      }
+      print = () => {
+        console.log(this.xyz);
+      }
+    }
+
+    class class1 extends baseClass {
+      constructor() {
+        super();
+        this.name = "testing..."
+        this.xyz = "xyz changed.."
+      }
+      property1 = "property1value"
+      method1 = () => {
+        console.log(this.name);
+      }
+    }
+    const class1Obj = new class1();
+    console.log(class1Obj.property1);
+    class1Obj.method1();
+    class1Obj.print();
+  </script>
+</body>
+</html>

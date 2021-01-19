@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Example</title>
+    <script src="modal.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 2rem;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <my-modal>
+        <h1 slot="title">Welcome</h1>
+        <p>Please confirm ?</p>
+    </my-modal>
+    <br>
+    <p>Please confirm your choice?</p>
+    <button>Confirm</button>
+    <script>
+        const btn = document.querySelector('button');
+        const model = document.querySelector('my-modal');
+        model.addEventListener('CONFIRM', () => {
+            console.log('confirm...');
+        });
+        model.addEventListener('CANCEL', () => {
+            console.log('cancel...');
+        });
+        btn.addEventListener('click', () => {
+            // model.setAttribute('opened', '');
+            if(!model.isOpen) {
+                model.open();
+            }          
+        });
+    </script>
+</body>
+</html>

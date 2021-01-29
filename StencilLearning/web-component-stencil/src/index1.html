@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <script type="module" src="/build/web-component-stencil.esm.js"></script>
+    <script nomodule src="/build/web-component-stencil.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .side-nav ul {
+        list-style: none;
+      }
+      .side-nav li {
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Open menu</button>
+    <new-component drawer_title="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li>One</li>
+          <li>Two</li>
+        </ul>
+      </nav>
+    </new-component>
+    <script>
+      const sideDrawer = document.querySelector('new-component');
+      setTimeout(() => {
+        sideDrawer.drawer_title = "Change by property";
+        //sideDrawer.setAttribute('drawer_title', 'Change by attribute');
+      }, 3000);
+      const btn = document.querySelector('button');
+      btn.addEventListener('click',()=>{
+        if(!sideDrawer.open) {
+          sideDrawer.open = true;
+          sideDrawer.testMethod();          
+        }
+      });  
+    </script>
+  </body>
+</html>
+
+

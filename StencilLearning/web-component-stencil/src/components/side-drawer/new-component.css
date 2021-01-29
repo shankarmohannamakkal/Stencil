@@ -1,0 +1,82 @@
+ aside {
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+    left: -100%;
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(227, 230, 227);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    transition: left 0.3s ease-out;
+    z-index: 100;
+}
+
+/* if shadow: true is there, then :host will work, otherwise we can say new-component([open])*/
+:host([open]) aside {
+    left: 0;
+}
+
+header {
+    padding: 1rem;
+    background-color: black;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color:white;
+    margin: 0;
+}
+
+header button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    color: white;
+    background: transparent;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+header button:focus,
+#tabs button:focus {
+    outline: none;
+}
+
+#tabs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#tabs button {
+    width: 30%;
+    background-color: white;
+    color: blue;
+    border: solid 1px gray;
+    padding: 0.15rem 0;
+}
+
+#tabs button.active,
+#tabs button:hover,
+#tabs button:active {
+    background-color: blue;
+    color: white;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.75);
+    z-index: 10;
+    display: none;
+}
+
+:host([open]) .backdrop {
+    display: block;
+}

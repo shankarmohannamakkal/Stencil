@@ -1,0 +1,25 @@
+/* :host {
+    display: block;
+  }
+
+  
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100vh;
+    background-color: aquamarine;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+h1 {
+    color: red;
+}
+
+* {
+    background-color: red;
+} */
+
+
+/* h1 {color:red} */

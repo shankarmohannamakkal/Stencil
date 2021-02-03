@@ -6,8 +6,19 @@
   <title>Stock-Price</title>
   <script type="module" src="/build/web-component-stencil.esm.js"></script>
   <script nomodule src="/build/web-component-stencil.js"></script>
+  <style>
+    html { --color-primary: green; }
+  </style>
 </head>
 <body>
-  <my-stock-price></my-stock-price>
+  <my-stock-price stock-symbol='IBM'></my-stock-price>
+  <my-stock-finder></my-stock-finder>
+  <my-loading></my-loading>
+  <!-- <script>
+    const stockFinderEle = document.querySelector('my-stock-finder');
+    stockFinderEle.addEventListener('mySymbolSelected', event => {
+      console.log(event)
+    });
+  </script> -->
 </body>
 </html>

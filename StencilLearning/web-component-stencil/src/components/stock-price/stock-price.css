@@ -1,0 +1,8 @@
+
+:host(.error) {
+  color:red;
+}
+
+.price {
+    color: var(--color-primary,maroon);
+}

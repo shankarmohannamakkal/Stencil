@@ -22,9 +22,14 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyLoading {
+    }
     interface MySideDrawer {
     }
+    interface MyStockFinder {
+    }
     interface MyStockPrice {
+        "stockSymbol": string;
     }
     interface NewComponent {
         "drawer_title": string;
@@ -45,11 +50,23 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLMyLoadingElement extends Components.MyLoading, HTMLStencilElement {
+    }
+    var HTMLMyLoadingElement: {
+        prototype: HTMLMyLoadingElement;
+        new (): HTMLMyLoadingElement;
+    };
     interface HTMLMySideDrawerElement extends Components.MySideDrawer, HTMLStencilElement {
     }
     var HTMLMySideDrawerElement: {
         prototype: HTMLMySideDrawerElement;
         new (): HTMLMySideDrawerElement;
+    };
+    interface HTMLMyStockFinderElement extends Components.MyStockFinder, HTMLStencilElement {
+    }
+    var HTMLMyStockFinderElement: {
+        prototype: HTMLMyStockFinderElement;
+        new (): HTMLMyStockFinderElement;
     };
     interface HTMLMyStockPriceElement extends Components.MyStockPrice, HTMLStencilElement {
     }
@@ -66,7 +83,9 @@ declare global {
     interface HTMLElementTagNameMap {
         "my-basic-side-drawer": HTMLMyBasicSideDrawerElement;
         "my-component": HTMLMyComponentElement;
+        "my-loading": HTMLMyLoadingElement;
         "my-side-drawer": HTMLMySideDrawerElement;
+        "my-stock-finder": HTMLMyStockFinderElement;
         "my-stock-price": HTMLMyStockPriceElement;
         "new-component": HTMLNewComponentElement;
     }
@@ -88,9 +107,15 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyLoading {
+    }
     interface MySideDrawer {
     }
+    interface MyStockFinder {
+        "onMySymbolSelected"?: (event: CustomEvent<string>) => void;
+    }
     interface MyStockPrice {
+        "stockSymbol"?: string;
     }
     interface NewComponent {
         "drawer_title"?: string;
@@ -99,7 +124,9 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "my-basic-side-drawer": MyBasicSideDrawer;
         "my-component": MyComponent;
+        "my-loading": MyLoading;
         "my-side-drawer": MySideDrawer;
+        "my-stock-finder": MyStockFinder;
         "my-stock-price": MyStockPrice;
         "new-component": NewComponent;
     }
@@ -110,7 +137,9 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-basic-side-drawer": LocalJSX.MyBasicSideDrawer & JSXBase.HTMLAttributes<HTMLMyBasicSideDrawerElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-loading": LocalJSX.MyLoading & JSXBase.HTMLAttributes<HTMLMyLoadingElement>;
             "my-side-drawer": LocalJSX.MySideDrawer & JSXBase.HTMLAttributes<HTMLMySideDrawerElement>;
+            "my-stock-finder": LocalJSX.MyStockFinder & JSXBase.HTMLAttributes<HTMLMyStockFinderElement>;
             "my-stock-price": LocalJSX.MyStockPrice & JSXBase.HTMLAttributes<HTMLMyStockPriceElement>;
             "new-component": LocalJSX.NewComponent & JSXBase.HTMLAttributes<HTMLNewComponentElement>;
         }
